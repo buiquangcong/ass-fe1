@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "name": "Mũ lưỡi trai update",
+      "image": "https://hoyang.vn/wp-content/uploads/2021/03/set-quan-ao-dep.jpg",
+      "description": "Mũ lưỡi trai update",
+      "category": "Mũ",
+      "price": 129000,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Áo khoác denim",
+      "image": "https://down-vn.img.susercontent.com/file/vn-11134208-7qukw-ljqjtknkxzia10",
+      "description": "Áo khoác denim",
+      "category": "Áo",
+      "price": 799000
+    },
+    {
+      "name": "Quần Jean",
+      "image": "https://th.bing.com/th/id/OIP.WoAOA0URWWkZ5lbhs7wP-AHaHa?w=198&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+      "description": "Quần Jean",
+      "category": "Quần",
+      "price": "10000",
+      "id": 6
+    },
+    {
+      "name": "Fake",
+      "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+      "description": "Fake",
+      "category": "Fake",
+      "price": "20000",
+      "id": 7
+    }
+  ],
+  "category": [
+    {
+      "name": "Mũ",
+      "id": 1
+    },
+    {
+      "name": "Áo",
+      "id": 2
+    },
+    {
+      "name": "Quần",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "ngocnv@gmail.com",
+      "password": "$2a$10$OEocdXboYnvt6EdLKxRH1.sqjWg/BzrLxB7HOuz.yCjAJuRDJeacW",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "angocit@gmail.com",
+      "password": "$2a$10$RluXUIdUqSIn/CeGVs.pt.Qpq2L9Vkmd6fZ6.rzvmcmcgJTbSepPa",
+      "role": "user",
+      "id": 2
+    }
+  ]
+}

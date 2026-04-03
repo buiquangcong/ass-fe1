@@ -1,0 +1,57 @@
+<section class="w-full h-auto bg-[#F2F0F1] overflow-hidden flex justify-center items-center">
+    <img src="img/banner.png" alt="" class="w-full h-auto object-cover md:scale-105">
+</section>
+<div>
+    <img src="/img/thuonghieu.png" alt="" class="w-full">
+</div>
+<section>
+    <div>
+        <h2 class="text-3xl md:text-5xl font-black text-center mb-10 md:mb-14 ">New Arrivals</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-[5%] md:px-[10%] py-10">
+        @for (product of products; track product.id){
+        <div class="group cursor-pointer">
+            <div class="bg-[#F0EEED] rounded-[20px] aspect-square overflow-hidden flex items-center justify-center mb-4"
+                [routerLink]="'/detail'">
+                <img [src]="product.image" alt="" class="w-full h-full object-cover">
+            </div>
+            <p class="text-black font-bold text-base md:text-lg mb-1 truncate">{{product.name}}</p>
+            <div class="flex items-center gap-3">
+                <h6 class="text-xl md:text-2xl font-black text-black">{{product.price}}</h6>
+            </div>
+        </div>
+    }
+
+    </div>
+    <div class="flex justify-center text-center mb-4 ">
+        <button
+            class=" md:w-[218px] px-16 py-4 border border-black/10 rounded-full font-medium text-black bg-white hover:bg-black hover:text-white transition-all duration-300">View
+            All</button>
+    </div>
+
+
+    <hr>
+
+    <div>
+        <h2 class="text-3xl md:text-5xl font-black text-center mb-10 md:mb-14 mt-3 ">Top Selling</h2>
+    </div>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-[5%] md:px-[10%] py-10">
+        @for (product of products; track product.id){
+        <div class="group cursor-pointer">
+            <div class="bg-[#F0EEED] rounded-[20px] aspect-square overflow-hidden flex items-center justify-center mb-4"
+                [routerLink]="'/detail'">
+                <img [src]="product.image" alt="" class="w-full h-full object-cover">
+            </div>
+            <p class="text-black font-bold text-base md:text-lg mb-1 truncate">{{product.name}}</p>
+            <div class="flex items-center gap-3">
+                <h6 class="text-xl md:text-2xl font-black text-black">{{product.price}}</h6>
+            </div>
+        </div>
+    }
+
+    </div>
+</section>
+<section class="flex justify-center">
+    <img src="/img/endhome.png" alt="">
+</section>
+<router-outlet></router-outlet>

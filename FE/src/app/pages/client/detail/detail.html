@@ -1,0 +1,106 @@
+<section class="grid md:grid-cols-2 gap-10 px-[5%] md:px-[10%] py-10">
+    <div class="flex flex-col-reverse md:flex-row gap-4 ">
+        <div class="hidden md:flex flex-col gap-4 w-1/4">
+            <img src="img/dt.png" class="rounded-2xl border border-black/10">
+            <img src="img/dt1.png" class="rounded-2xl border border-black/10">
+            <img src="img/dt2.png" class="rounded-2xl border border-black/10">
+        </div>
+        <div class="flex-1 bg-[#F0EEED] rounded-[20px] flex items-center justify-center">
+            <img src="/img/dt.png" alt="" class="w-full object-contain p-10">
+        </div>
+    </div>
+    <div class="space-y-6">
+        <h1 class="text-4xl font-black uppercase">One Life Graphic T-shirt</h1>
+        <div class="flex items-center gap-3">
+            <h5 class="text-3xl font-black">$260</h5>
+            <span class="text-black/30 line-through text-2xl font-bold">$300</span>
+            <span class="bg-red-100 text-red-500 px-3 py-1 rounded-full font-bold">-40%</span>
+        </div>
+        <p class="text-black/60 border-b border-black/10 pb-6">This graphic t-shirt which is perfect for any occasion...
+        </p>
+        <div class="space-y-4 border-b border-black/10 pb-6">
+            <p class="text-black/60">Select Colors</p>
+            <div class="flex gap-3">
+                <div class="w-10 h-10 rounded-full bg-[#4F4631] cursor-pointer border border-black"></div>
+                <div class="w-10 h-10 rounded-full bg-[#314F4A] cursor-pointer"></div>
+                <div class="w-10 h-10 rounded-full bg-[#31344F] cursor-pointer"></div>
+            </div>
+        </div>
+
+        <div class="flex gap-4">
+            <div class="bg-[#F0F0F0] px-6 py-4 rounded-full flex gap-6 font-bold">
+                <span>-</span> <span>1</span> <span>+</span>
+            </div>
+            <button class="flex-1 bg-black text-white rounded-full font-bold" [routerLink]="'/cart'">Add to
+                Cart</button>
+        </div>
+    </div>
+
+</section>
+
+<section class="px-[5%] md:px-[10%] py-10 border-t border-black/5">
+    <div class="flex justify-between items-center mb-8 gap-4">
+        <h5 class="text-xl md:text-2xl font-black text-black">
+            All Reviews <span class="text-black/40 text-sm font-normal">(451)</span>
+        </h5>
+
+        <div class="flex gap-2">
+            <button class="hidden md:block bg-[#F0F0F0] p-3 rounded-full">
+            </button>
+        </div>
+        <button class="bg-black text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-black/80">
+            Write a Review
+        </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+        <article class="border border-black/10 p-6 rounded-[20px] space-y-3 hover:border-black transition">
+            <div class="text-yellow-400 text-sm italic">⭐⭐⭐⭐⭐</div>
+            <div class="flex items-center gap-2">
+                <h5 class="font-bold text-lg text-black">Samantha D.</h5>
+                <span
+                    class="bg-green-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">✔</span>
+            </div>
+            <p class="text-black/60 text-sm leading-relaxed">
+                "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+                designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+            </p>
+            <p class="text-black/40 text-xs font-bold pt-2">Posted on August 14, 2023</p>
+        </article>
+        <article class="border border-black/10 p-6 rounded-[20px] space-y-3 hover:border-black transition">
+            <div class="text-yellow-400 text-sm italic">⭐⭐⭐⭐⭐</div>
+            <div class="flex items-center gap-2">
+                <h5 class="font-bold text-lg text-black">Samantha D.</h5>
+                <span
+                    class="bg-green-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">✔</span>
+            </div>
+            <p class="text-black/60 text-sm leading-relaxed">
+                "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+                designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+            </p>
+            <p class="text-black/40 text-xs font-bold pt-2">Posted on August 14, 2023</p>
+        </article>
+    </div>
+</section>
+
+
+<section class="px-[5%] md:px-[10%] py-20">
+    <h2 class="text-3xl md:text-5xl font-black text-center mb-12 uppercase italic">
+        You might also like
+    </h2>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-[5%] md:px-[10%] py-10">
+        @for (product of products; track product.id){
+        <div class="group cursor-pointer">
+            <div class="bg-[#F0EEED] rounded-[20px] aspect-square overflow-hidden flex items-center justify-center mb-4"
+                [routerLink]="'/detail'">
+                <img [src]="product.image" alt="" class="w-full h-full object-cover">
+            </div>
+            <p class="text-black font-bold text-base md:text-lg mb-1 truncate">{{product.name}}</p>
+            <div class="flex items-center gap-3">
+                <h6 class="text-xl md:text-2xl font-black text-black">{{product.price}}</h6>
+            </div>
+        </div>
+    }
+
+    </div>
+</section>

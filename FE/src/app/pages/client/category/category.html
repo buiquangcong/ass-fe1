@@ -1,0 +1,80 @@
+<main class="px-[5%] md:px-[10%] py-10 flex flex-col md:flex-row gap-8">
+    <aside class="hidden md:block w-1/4 border border-black/10 rounded-[20px] p-6 space-y-8 h-fit">
+        <div class="flex justify-between items-center border-b pb-4">
+            <h5 class="text-xl font-bold">Filters</h5>
+        </div>
+        <ul class="space-y-4 text-black/60 border-b pb-6">
+            <li class="flex justify-between hover:text-black cursor-pointer">T-shirts <span>></span></li>
+            <li class="flex justify-between hover:text-black cursor-pointer">Shorts <span>></span></li>
+            <li class="flex justify-between hover:text-black cursor-pointer">Shirts <span>></span></li>
+            <li class="flex justify-between hover:text-black cursor-pointer">Hoodie <span>></span></li>
+            <li class="flex justify-between hover:text-black cursor-pointer">Jeans <span>></span></li>
+        </ul>
+        <div class="border-b pb-6">
+            <h5 class="font-bold mb-4">Price</h5>
+            <input type="range" class="w-full accent-black">
+            <div class="flex justify-between text-sm mt-2 font-bold">$50 <span>$200</span></div>
+        </div>
+        <div class="border-b pb-6">
+            <h5 class="font-bold mb-4">Colors</h5>
+            <div class="flex flex-wrap gap-3">
+                <div class="w-8 h-8 rounded-full bg-green-500 border cursor-pointer"></div>
+                <div class="w-8 h-8 rounded-full bg-red-500 border cursor-pointer"></div>
+                <div class="w-8 h-8 rounded-full bg-yellow-400 border cursor-pointer"></div>
+                <div class="w-8 h-8 rounded-full bg-blue-600 border border-black cursor-pointer"></div>
+                <div class="w-8 h-8 rounded-full bg-black border cursor-pointer"></div>
+            </div>
+        </div>
+        <div class="border-b pb-6">
+            <div class="flex justify-between items-center mb-4 cursor-pointer">
+                <h5 class="font-bold text-black uppercase">Size</h5>
+                <span>^</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <button
+                    class="bg-[#F0F0F0] text-black/60 px-5 py-2.5 rounded-full text-sm hover:bg-black hover:text-white transition">
+                    XX-Small
+                </button>
+                <button
+                    class="bg-[#F0F0F0] text-black/60 px-5 py-2.5 rounded-full text-sm hover:bg-black hover:text-white transition">
+                    X-Small
+                </button>
+                <button
+                    class="bg-[#F0F0F0] text-black/60 px-5 py-2.5 rounded-full text-sm hover:bg-black hover:text-white transition">
+                    Large
+                </button>
+                <button
+                    class="bg-[#F0F0F0] text-black/60 px-5 py-2.5 rounded-full text-sm hover:bg-black hover:text-white transition">
+                    X-Large
+                </button>
+            </div>
+        </div>
+        <button class="w-full bg-black text-white py-3 rounded-full font-bold">Apply Filter</button>
+    </aside>
+    <section class="flex-1">
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-black italic">Casual</h2>
+            <p class="text-black/40 text-sm hidden md:block">Showing 1-10 of 100 Products Sort by: <span
+                    class="text-black font-bold">Most Popular</span></p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-[5%] md:px-[10%] py-10">
+            @for (product of products; track product.id) {
+                <div class="group cursor-pointer">
+                    <div class="bg-[#F0EEED] rounded-[20px] aspect-square overflow-hidden flex items-center justify-center mb-4"
+                        [routerLink]="'/detail'">
+                        <img [src]="product.image" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-black font-bold text-base md:text-lg mb-1 truncate">{{product.name}}</p>
+                    <div class="flex items-center gap-3">
+                        <h6 class="text-xl md:text-2xl font-black text-black">{{product.price}}</h6>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="flex justify-between items-center border-t border-black/10 mt-12 pt-6">
+
+        </div>
+    </section>
+</main>
+

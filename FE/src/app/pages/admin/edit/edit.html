@@ -1,0 +1,48 @@
+<h1>Cập nhật sản phẩm</h1>
+
+<form nz-form [formGroup]="productform" class="login-form" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Tên không để trống">
+            <nz-input-wrapper>
+                <input type="text" nz-input formControlName="name" placeholder="Tên sản phẩm" />
+            </nz-input-wrapper>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <nz-input-wrapper>
+                <input type="text" nz-input formControlName="image" placeholder="Ảnh sản phẩm" />
+            </nz-input-wrapper>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Giá phải >=1000">
+            <nz-input-wrapper>
+                <input type="text" nz-input formControlName="price" placeholder="Giá sản phẩm" />
+            </nz-input-wrapper>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Nhập mô tả">
+            <nz-input-wrapper>
+                <input type="text" nz-input formControlName="description" placeholder="Mô tả sản phẩm" />
+            </nz-input-wrapper>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzErrorTip="Danh mục không để trống">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="5" nzRequired>Danh mục</nz-form-label>
+                <nz-form-control [nzSpan]="12" nzErrorTip="Danh mục không để trống">
+                    <nz-select id="category" formControlName="category" nzPlaceHolder="Chọn danh mục">
+                        @for (cat of categories; track cat.id){
+                        <nz-option [nzValue]="cat.name" [nzLabel]="cat.name"></nz-option>
+                        }
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+        </nz-form-control>
+    </nz-form-item>
+    <button [disabled]="!productform.valid" nz-button class="login-form-button login-form-margin" nzType="primary">Cập
+        nhật</button>
+</form>
